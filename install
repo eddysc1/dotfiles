@@ -1,0 +1,112 @@
+#!/bin/bash
+
+sudo apt-get update
+
+installCore() {
+    echo 'installing core applications'
+    sudo apt-get install -y zsh git curl vim htop xclip ripgrep pavucontrol chromium
+
+    echo 'installing core directories'
+    mkdir -p ~/tmp
+    mkdir -p ~/www
+
+    echo 'setting up git'
+    echo 'what is your name?'
+    read name
+    git config --global user.name "$name"
+    echo 'what is your email?'
+    read email
+    git config --global user.email "$email"
+    git config --global fetch.prune true
+}
+
+installShell() {
+    echo 'changing default shell to zsh'
+    chsh -s $(which zsh)
+
+    echo 'installing OMZ'
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
+}
+
+installDotfiles() {
+    echo 'installing dotfiles'
+    mkdir -p ~/.config/nvim
+
+    ln -sfn ~/dotfiles/init.vim ~/.config/nvim/init.vim
+    ln -sfn ~/dotfiles/.zshrc ~/.zshrc
+    ln -sfn ~/dotfiles/bin ~/bin
+}
+
+installKeyboard() {
+    echo 'installing keyboard'
+    sudo sh -c 'cat real-prog-dvorak >> /usr/share/X11/xkb/symbols/us'
+    ln -sfn ~/dotfiles/keyboard/setdvorak.desktop ~/.config/autostart/setdvorak.desktop
+}
+
+installDev() {
+    echo 'installing neovim'
+    sudo apt-get install -y neovim
+    mkdir -p ~/.vim/undodir
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    cd ~/tmp
+    curl -OL https://github.com/phpstan/phpstan/releases/download/0.12.81/phpstan.phar
+    sudo chmod +x phpstan.phar
+    sudo mv phpstan.phar /usr/local/bin/phpstan
+
+    echo 'installing php'
+    sudo apt-get install -y php7.4-cli php7.4-curl php7.4-xml php7.4-mysql php7.4-mbstring php7.4-gd php7.4-zip
+
+    echo 'installing composer'
+    cd ~/tmp
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+    php -r "unlink('composer-setup.php');"
+    cd
+
+    echo 'installing node and npm'
+    curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+    echo 'installing mysql server'
+    sudo apt-get install -y mysql-server
+
+    echo 'installing phpmyadmin'
+    cd ~/tmp
+    curl -O https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.gz
+    tar -xzvf phpMyAdmin*
+    rm phpMyAdmin*.tar.gz
+    mv phpMyAdmin* ~/www/phpmyadmin
+}
+
+read -rp 'install core? [Y/n] ' go
+if [ "$go" != 'n' ]; then
+    installCore
+fi
+
+read -rp 'install shell? [Y/n] ' go
+if [ "$go" != 'n' ]; then
+    installShell
+fi
+
+read -rp 'install dotfiles? [Y/n] ' go
+if [ "$go" != 'n' ]; then
+    installDotfiles
+fi
+
+read -rp 'install keyboard? [Y/n] ' go
+if [ "$go" != 'n' ]; then
+    installKeyboard
+fi
+
+read -rp 'install dev tools? [Y/n] ' go
+if [ "$go" != 'n' ]; then
+    installDev
+fi
+
+echo 'install done, you have to reboot now!!!!!!!!!'
+echo 'install done, you have to reboot now!!!!!!!!!'
+echo 'install done, you have to reboot now!!!!!!!!!'
+echo 'install done, you have to reboot now!!!!!!!!!'
+echo 'install done, you have to reboot now!!!!!!!!!'

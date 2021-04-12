@@ -1,0 +1,8 @@
+#!/bin/bash
+php -S 127.0.0.1:9090 -t $HOME/www/phpmyadmin > /dev/null 2>&1 &
+if [ -d 'public' ]; then
+    php -S 127.0.0.1:8080 -t public
+else
+    php -S 127.0.0.1:8080
+fi
+pkill php
