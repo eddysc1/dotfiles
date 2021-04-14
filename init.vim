@@ -20,11 +20,14 @@ set termguicolors
 set noshowmode
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
-set signcolumn=yes
 set hlsearch
+set title
+set titlestring=%t
+set notimeout ttimeout ttimeoutlen=0
+set numberwidth=3
 
 call plug#begin()
-Plug 'flazz/vim-colorschemes'
+Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
 Plug 'lumiliet/vim-twig'
 Plug 'ncm2/ncm2'
@@ -37,9 +40,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-colorscheme ayu
-highlight CursorLineNr guifg=#2D3640 guibg=#0F1419
-highlight netrwDir guifg=#36A3D9
+let g:solarized_termtrans=1
+colorscheme solarized8
 
 let mapleader = ' '
 let g:netrw_banner = 0
