@@ -44,6 +44,9 @@ installKeyboard() {
 }
 
 installDev() {
+    echo 'setting up gnome-terminal'
+    dconf load /org/gnome/terminal/ < ~/dotfiles/gnome-terminal.ini
+
     echo 'installing neovim'
     sudo apt-get install -y neovim
     mkdir -p ~/.vim/undodir
