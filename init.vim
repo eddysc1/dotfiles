@@ -24,6 +24,7 @@ set title
 set titlestring=%t
 set notimeout ttimeout ttimeoutlen=0
 set numberwidth=3
+set nostartofline
 
 call plug#begin()
 Plug 'lifepillar/vim-solarized8'
