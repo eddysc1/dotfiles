@@ -42,12 +42,20 @@ call plug#end()
 
 let g:solarized_termtrans=1
 colorscheme solarized8
+highlight LineNr gui=NONE guibg=#002B36
+highlight CursorLineNr gui=NONE guibg=#002B36
+highlight StatusLine gui=NONE guibg=#002B36
+highlight StatusLineNC gui=NONE guibg=#002B36
+highlight ColorColumn gui=NONE guibg=#002B36
+highlight SignColumn gui=NONE guibg=#002B36
+highlight VertSplit gui=NONE guibg=#00141A guifg=#00141A
 
 let mapleader = ' '
 let g:netrw_banner = 0
 let g:ale_linters = {'php': ['phpstan']}
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
+let g:ale_enabled = 0
 let g:fzf_layout = {'down': '30%'}
 let g:fzf_preview_window = []
 
@@ -70,6 +78,8 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-s> :Rg<space>
 
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+
+nnoremap <leader>al :ALEToggle<CR>
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
