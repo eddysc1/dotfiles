@@ -79,7 +79,7 @@ nnoremap <C-s> :Rg<space>
 
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
-nnoremap <leader>al :ALEToggle<CR>
+nnoremap <leader>al :call ToggleSignColumn()<CR>:ALEToggle<CR>
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
@@ -89,3 +89,13 @@ if has('nvim') && exists('g:fzf_layout')
     \| autocmd BufLeave <buffer> set laststatus=2 showmode
   let $FZF_DEFAULT_OPTS .= ' --no-info'
 endif
+
+function! ToggleSignColumn()
+    if !exists("g:signcolumn_on") || !g:signcolumn_on
+        set signcolumn=yes
+        let g:signcolumn_on=1
+    else
+        set signcolumn=no
+        let g:signcolumn_on=0
+    endif
+endfunction
