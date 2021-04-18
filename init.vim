@@ -53,12 +53,15 @@ highlight VertSplit gui=NONE guibg=#00141A guifg=#00141A
 let mapleader = ' '
 let g:netrw_banner = 0
 let g:ale_linters = {'php': ['phpstan']}
-let g:ale_enabled = 0
 let g:ale_linters_explicit = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
 let g:ale_set_signs = v:false
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 0
 let g:fzf_layout = {'down': '30%'}
 let g:fzf_preview_window = []
 
@@ -82,7 +85,7 @@ nnoremap <C-s> :Rg<space>
 
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
-nnoremap <C-l> :ALEToggle<CR>
+nnoremap <C-l> :ALEReset<CR>:ALELint<CR>
 
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-k> :cprev<CR>
