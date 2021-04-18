@@ -79,7 +79,7 @@ nnoremap <C-s> :Rg<space>
 
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
-nnoremap <leader>al :call ToggleSignColumn()<CR>:ALEToggle<CR>
+nnoremap <C-l> :call ToggleSignColumn()<CR>:ALEToggle<CR>
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
