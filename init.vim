@@ -49,6 +49,9 @@ highlight StatusLineNC gui=NONE guibg=#002B36
 highlight ColorColumn gui=NONE guibg=#002B36
 highlight SignColumn gui=NONE guibg=#002B36
 highlight VertSplit gui=NONE guibg=#00141A guifg=#00141A
+highlight TabLine gui=NONE guibg=#002B36 guifg=#657B83
+highlight TabLineFill gui=NONE guibg=#002B36 guifg=#657B83
+highlight TabLineSel gui=NONE guibg=#657B83 guifg=#FFFFFF
 
 let mapleader = ' '
 let g:netrw_banner = 0
