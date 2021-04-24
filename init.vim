@@ -27,7 +27,7 @@ set numberwidth=3
 set nostartofline
 
 call plug#begin()
-Plug 'lifepillar/vim-solarized8'
+Plug 'ayu-theme/ayu-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'lumiliet/vim-twig'
 Plug 'ncm2/ncm2'
@@ -40,18 +40,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-let g:solarized_termtrans=1
-colorscheme solarized8
-highlight LineNr gui=NONE guibg=#002B36
-highlight CursorLineNr gui=NONE guibg=#002B36
-highlight StatusLine gui=NONE guibg=#002B36
-highlight StatusLineNC gui=NONE guibg=#002B36
-highlight ColorColumn gui=NONE guibg=#002B36
-highlight SignColumn gui=NONE guibg=#002B36
-highlight VertSplit gui=NONE guibg=#00141A guifg=#00141A
-highlight TabLine gui=NONE guibg=#002B36 guifg=#657B83
-highlight TabLineFill gui=NONE guibg=#002B36 guifg=#657B83
-highlight TabLineSel gui=NONE guibg=#657B83 guifg=#FFFFFF
+colorscheme ayu
+highlight! link CursorLineNr LineNr
 
 let mapleader = ' '
 let g:netrw_banner = 0
