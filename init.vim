@@ -42,6 +42,7 @@ call plug#end()
 
 colorscheme ayu
 highlight! link CursorLineNr LineNr
+highlight netrwDir guifg=#36A3D9
 
 let mapleader = ' '
 let g:netrw_banner = 0
