@@ -41,7 +41,8 @@ installDotfiles() {
 
 installKeyboard() {
     echo 'installing keyboard'
-    sudo sh -c 'cat real-prog-dvorak >> /usr/share/X11/xkb/symbols/us'
+    sudo sh -c 'cat keyboard/real-prog-dvorak >> /usr/share/X11/xkb/symbols/us'
+    mkdir -p ~/.config/autostart
     ln -sfn ~/dotfiles/keyboard/setdvorak.desktop ~/.config/autostart/setdvorak.desktop
 }
 
@@ -57,6 +58,8 @@ installDev() {
     make
     sudo make install
     rm -rf ~/tmp/neovim
+    sudo apt-get install -y python3-pip
+    sudo pip3 install --upgrade neovim
     mkdir -p ~/.vim/undodir
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
