@@ -3,7 +3,6 @@ ZSH_THEME='robbyrussell'
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/bin
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --no-ignore'
 
