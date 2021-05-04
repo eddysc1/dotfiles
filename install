@@ -4,7 +4,7 @@ sudo apt-get update
 
 installCore() {
     echo 'installing core applications'
-    sudo apt-get install -y zsh git curl vim htop xclip ripgrep pavucontrol apt-transport-https
+    sudo apt-get install -y zsh git curl vim htop xclip ripgrep pavucontrol apt-transport-https awesome
     sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
     echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
     sudo apt-get update
@@ -35,15 +35,14 @@ installShell() {
 installDotfiles() {
     echo 'installing dotfiles'
     mkdir -p ~/.config/nvim
-    ln -sfn ~/dotfiles/init.vim ~/.config/nvim/init.vim
-    ln -sfn ~/dotfiles/.zshrc ~/.zshrc
+    ln -sfn ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+    ln -sfn ~/dotfiles/zsh/.zshrc ~/.zshrc
+    ln -sfn ~/dotfiles/awesome ~/.config/awesome
 }
 
 installKeyboard() {
     echo 'installing keyboard'
     sudo sh -c 'cat keyboard/real-prog-dvorak >> /usr/share/X11/xkb/symbols/us'
-    mkdir -p ~/.config/autostart
-    ln -sfn ~/dotfiles/keyboard/setdvorak.desktop ~/.config/autostart/setdvorak.desktop
 }
 
 installDev() {
@@ -84,6 +83,9 @@ installDev() {
 
     echo 'installing mysql server'
     sudo apt-get install -y mysql-server
+
+    echo 'installing dbeaver'
+    sudo snap install dbeaver-ce
 }
 
 read -rp 'install core? [Y/n] ' go
