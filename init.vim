@@ -25,6 +25,7 @@ set titlestring=%t
 set notimeout ttimeout ttimeoutlen=0
 set numberwidth=3
 set nostartofline
+set mouse=n
 
 call plug#begin()
 Plug 'ayu-theme/ayu-vim'
