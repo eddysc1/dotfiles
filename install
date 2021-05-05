@@ -4,7 +4,7 @@ sudo apt-get update
 
 installCore() {
     echo 'installing core applications'
-    sudo apt-get install -y zsh git curl vim htop xclip ripgrep pavucontrol apt-transport-https awesome
+    sudo apt-get install -y zsh git curl vim htop xclip ripgrep pavucontrol apt-transport-https awesome kitty
     sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
     echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
     sudo apt-get update
@@ -38,6 +38,7 @@ installDotfiles() {
     ln -sfn ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
     ln -sfn ~/dotfiles/zsh/.zshrc ~/.zshrc
     ln -sfn ~/dotfiles/awesome ~/.config/awesome
+    ln -sfn ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
 
 installKeyboard() {
@@ -46,9 +47,6 @@ installKeyboard() {
 }
 
 installDev() {
-    echo 'setting up gnome-terminal'
-    dconf load /org/gnome/terminal/ < ~/dotfiles/gnome-terminal.ini
-
     echo 'installing neovim'
     sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
     cd ~/tmp
