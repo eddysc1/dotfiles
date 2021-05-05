@@ -46,6 +46,12 @@ installKeyboard() {
     sudo sh -c 'cat keyboard/real-prog-dvorak >> /usr/share/X11/xkb/symbols/us'
 }
 
+installFonts() {
+    echo 'installing fonts'
+    mkdir -p ~/.local/share/fonts
+    cp ~/dotfiles/fonts/* ~/.local/share/fonts
+}
+
 installDev() {
     echo 'installing neovim'
     sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
@@ -104,6 +110,11 @@ fi
 read -rp 'install keyboard? [Y/n] ' go
 if [ "$go" != 'n' ]; then
     installKeyboard
+fi
+
+read -rp 'install fonts? [Y/n] ' go
+if [ "$go" != 'n' ]; then
+    installFonts
 fi
 
 read -rp 'install dev tools? [Y/n] ' go
