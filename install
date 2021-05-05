@@ -35,6 +35,7 @@ installShell() {
 installDotfiles() {
     echo 'installing dotfiles'
     mkdir -p ~/.config/nvim
+    mkdir -p ~/.config/kitty
     ln -sfn ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
     ln -sfn ~/dotfiles/zsh/.zshrc ~/.zshrc
     ln -sfn ~/dotfiles/awesome ~/.config/awesome
