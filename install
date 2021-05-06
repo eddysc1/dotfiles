@@ -42,11 +42,6 @@ installDotfiles() {
     ln -sfn ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
 
-installKeyboard() {
-    echo 'installing keyboard'
-    sudo sh -c 'cat keyboard/real-prog-dvorak >> /usr/share/X11/xkb/symbols/us'
-}
-
 installFonts() {
     echo 'installing fonts'
     mkdir -p ~/.local/share/fonts
@@ -109,11 +104,6 @@ fi
 read -rp 'install dotfiles? [Y/n] ' go
 if [ "$go" != 'n' ]; then
     installDotfiles
-fi
-
-read -rp 'install keyboard? [Y/n] ' go
-if [ "$go" != 'n' ]; then
-    installKeyboard
 fi
 
 read -rp 'install fonts? [Y/n] ' go
