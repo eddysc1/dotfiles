@@ -60,8 +60,8 @@ vnoremap <leader>y "+y
 nnoremap <leader>ic :PhpactorImportClass<CR>
 nnoremap <C-]> :PhpactorGotoDefinition<CR>
 
-nnoremap <leader>gu :diffget //2<CR>
-nnoremap <leader>gh :diffget //3<CR>
+nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gj :diffget //3<CR>
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
