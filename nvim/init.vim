@@ -51,7 +51,6 @@ let g:fzf_preview_window = []
 
 nnoremap <leader>pv :Ex<CR>
 
-vnoremap <leader>p "_dP
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 nnoremap <leader>y "+y
