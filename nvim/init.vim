@@ -66,7 +66,6 @@ nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gj :diffget //3<CR>
 
 nnoremap <C-p> :Files<CR>
-nnoremap <C-b> :Buffers<CR>
 nnoremap <C-s> :Rg<space>
 
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
