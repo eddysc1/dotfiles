@@ -79,6 +79,7 @@ nnoremap <leader>8 :8tabnext<CR>
 nnoremap <leader>9 :9tabnext<CR>
 nnoremap <leader>0 :10tabnext<CR>
 nnoremap <leader><tab> g<tab>
+nnoremap <leader>t :tabnew<CR>
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
