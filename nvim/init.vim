@@ -38,6 +38,7 @@ Plug 'phpactor/ncm2-phpactor'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'mkitt/tabline.vim'
 call plug#end()
 
 colorscheme ayu
