@@ -38,9 +38,6 @@ Plug 'phpactor/ncm2-phpactor'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 colorscheme ayu
@@ -70,22 +67,17 @@ nnoremap <C-s> :Rg<space>
 
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
-nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
-nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
-nnoremap <leader>5 :lua require("harpoon.ui").nav_file(5)<CR>
-nnoremap <leader>6 :lua require("harpoon.ui").nav_file(6)<CR>
-nnoremap <leader>7 :lua require("harpoon.ui").nav_file(7)<CR>
-nnoremap <leader>8 :lua require("harpoon.ui").nav_file(8)<CR>
-nnoremap <leader>9 :lua require("harpoon.ui").nav_file(9)<CR>
-nnoremap <leader>0 :lua require("harpoon.ui").nav_file(10)<CR>
-nnoremap <C-k> :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <leader>t1 :lua require("harpoon.term").gotoTerminal(1)<CR>
-nnoremap <leader>t2 :lua require("harpoon.term").gotoTerminal(2)<CR>
-nnoremap <leader>c1 :lua require("harpoon.term").sendCommand(1, "php -S 127.0.0.1:8080 -t public\n")<CR>
-nnoremap <leader>c2 :lua require("harpoon.term").sendCommand(2, "npm run watch\n")<CR>
+nnoremap <leader>1 :1tabnext<CR>
+nnoremap <leader>2 :2tabnext<CR>
+nnoremap <leader>3 :3tabnext<CR>
+nnoremap <leader>4 :4tabnext<CR>
+nnoremap <leader>5 :5tabnext<CR>
+nnoremap <leader>6 :6tabnext<CR>
+nnoremap <leader>7 :7tabnext<CR>
+nnoremap <leader>8 :8tabnext<CR>
+nnoremap <leader>9 :9tabnext<CR>
+nnoremap <leader>0 :10tabnext<CR>
+nnoremap <leader><tab> g<tab>
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
