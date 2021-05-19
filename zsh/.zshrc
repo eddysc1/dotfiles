@@ -4,7 +4,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
-export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
 alias ls='ls --color=auto'
 alias la='ls -a'
