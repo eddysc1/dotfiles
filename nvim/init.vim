@@ -26,6 +26,8 @@ set notimeout ttimeout ttimeoutlen=0
 set numberwidth=3
 set nostartofline
 set mouse=n
+set ignorecase
+set smartcase
 
 call plug#begin()
 Plug 'ayu-theme/ayu-vim'
