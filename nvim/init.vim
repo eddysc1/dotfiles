@@ -4,7 +4,8 @@ set guicursor=
 set relativenumber
 set hidden
 set noerrorbells
-set tabstop=4 softtabstop=4
+set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
@@ -28,6 +29,10 @@ set nostartofline
 set mouse=n
 set ignorecase
 set smartcase
+set splitright
+set splitbelow
+set showmatch
+set matchtime=2
 
 call plug#begin()
 Plug 'ayu-theme/ayu-vim'
@@ -62,16 +67,32 @@ vnoremap <leader>y "+y
 nnoremap <leader>ic :PhpactorImportClass<CR>
 nnoremap <C-]> :PhpactorGotoDefinition<CR>
 
+" Solving conflicts
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gj :diffget //3<CR>
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :Rg<space>
 
+" Highlight search, then disable highlight
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
-nnoremap <C-j> :tabnext<CR>
-nnoremap <C-k> :tabprev<CR>
+" Scrolling window
+nnoremap <Up> <C-y>
+nnoremap <Down> <C-e>
+
+" Moving between tabs
+nnoremap <Right> gt
+nnoremap <Left> gT
+
+" Moving between splits
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+
+" Make esc leave terminal mode
+tnoremap <Esc><Esc> <C-\><C-n>
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
