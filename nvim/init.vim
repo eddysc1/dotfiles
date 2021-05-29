@@ -36,7 +36,6 @@ set matchtime=2
 
 call plug#begin()
 Plug 'ayu-theme/ayu-vim'
-Plug 'tpope/vim-fugitive'
 Plug 'lumiliet/vim-twig'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
@@ -57,19 +56,18 @@ let g:netrw_banner = 0
 let g:fzf_layout = {'down': '30%'}
 let g:fzf_preview_window = []
 
+" File navigation
 nnoremap <leader>pv :Ex<CR>
 
+" Copy to clipboard, delete to black hole
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 
+" Php stuff
 nnoremap <leader>ic :PhpactorImportClass<CR>
 nnoremap <C-]> :PhpactorGotoDefinition<CR>
-
-" Solving conflicts
-nnoremap <leader>gf :diffget //2<CR>
-nnoremap <leader>gj :diffget //3<CR>
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :Rg<space>
