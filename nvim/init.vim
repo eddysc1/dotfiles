@@ -92,6 +92,7 @@ nnoremap <C-h> <C-w><C-h>
 " Make esc leave terminal mode
 tnoremap <Esc><Esc> <C-\><C-n>
 
+" Autocompletion
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 if has('nvim') && exists('g:fzf_layout')
