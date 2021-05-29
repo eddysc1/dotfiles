@@ -10,10 +10,6 @@ installCore() {
     sudo apt-get update
     sudo apt-get install -y brave-browser
 
-    echo 'installing core directories'
-    mkdir -p ~/tmp
-    mkdir -p ~/www
-
     echo 'setting up git'
     echo 'what is your name?'
     read name
