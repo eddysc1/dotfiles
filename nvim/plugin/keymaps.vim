@@ -11,11 +11,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>ic :PhpactorImportClass<CR>
 nnoremap <C-]> :PhpactorGotoDefinition<CR>
 
-" File search
-nnoremap <C-p> :Files<CR>
-nnoremap <C-s> :Rg<space>
-
-" Highlight search, then disable highlight
+" Disable search highlights when highlights on, otherwise regular action
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
 " Scrolling window
@@ -34,3 +30,9 @@ nnoremap <C-h> <C-w><C-h>
 
 " Make esc leave terminal mode
 tnoremap <Esc><Esc> <C-\><C-n>
+
+" Telescope
+nnoremap <leader>ft :lua require('telescope.builtin').git_files()<CR>
+nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("> ")})<CR>
+nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
