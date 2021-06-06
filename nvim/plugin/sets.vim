@@ -15,7 +15,6 @@ set incsearch
 set scrolloff=4
 set colorcolumn=80
 set termguicolors
-set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 set hlsearch
 set title
