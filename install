@@ -88,6 +88,9 @@ installDev() {
     echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
     sudo apt-get update
     sudo apt-get install -y dbeaver-ce
+
+    echo 'installing typescript'
+    sudo npm install -g typescript
 }
 
 read -rp 'install core? [Y/n] ' go
