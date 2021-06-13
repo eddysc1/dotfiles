@@ -3,6 +3,7 @@ call plug#begin()
 " Color themes
 Plug 'ayu-theme/ayu-vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'srcery-colors/srcery-vim'
 
 " Tabs
 Plug 'mkitt/tabline.vim'
