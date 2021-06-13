@@ -1,3 +1,6 @@
+" Space
+let mapleader = ' '
+
 " File navigation
 nnoremap <leader>pv :Ex<CR>
 

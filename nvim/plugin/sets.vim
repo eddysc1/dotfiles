@@ -27,5 +27,4 @@ set ignorecase
 set smartcase
 set splitright
 set splitbelow
-set showmatch
-set matchtime=2
+set noshowmode
