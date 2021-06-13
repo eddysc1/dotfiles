@@ -28,3 +28,4 @@ set smartcase
 set splitright
 set splitbelow
 set noshowmode
+set signcolumn=no

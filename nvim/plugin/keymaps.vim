@@ -1,4 +1,4 @@
-" Space
+" Space is the leader
 let mapleader = ' '
 
 " File navigation
@@ -9,10 +9,6 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-
-" Php stuff
-nnoremap <leader>ic :PhpactorImportClass<CR>
-nnoremap <C-]> :PhpactorGotoDefinition<CR>
 
 " Disable search highlights when highlights on, otherwise regular action
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()

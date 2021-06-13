@@ -15,13 +15,11 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " Lsp
 Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
 
 " Completion
 Plug 'hrsh7th/nvim-compe'
 
 " Php
-Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 Plug 'jwalton512/vim-blade'
 Plug 'lumiliet/vim-twig'
 
