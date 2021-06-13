@@ -15,6 +15,8 @@ Plug 'nvim-telescope/telescope.nvim'
 " Lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
+
+" Completion
 Plug 'hrsh7th/nvim-compe'
 
 " Php
