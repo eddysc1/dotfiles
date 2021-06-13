@@ -4,6 +4,8 @@ let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
 
 highlight! link CursorLineNr LineNr
+highlight! link StatusLine TabLineSel
+highlight! link StatusLineNC TabLineFill
 highlight netrwDir guifg=#36A3D9
-highlight TabLineFill guifg=#FFFFFF
-highlight TabLineSel guifg=#FFFFFF guibg=#7c6f64
+highlight TabLineFill guifg=#928374
+highlight TabLineSel guifg=#FFFFFF
