@@ -26,3 +26,5 @@ Plug 'jwalton512/vim-blade'
 Plug 'lumiliet/vim-twig'
 
 call plug#end()
+
+lua require("lsp")
