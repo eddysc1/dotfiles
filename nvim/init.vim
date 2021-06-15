@@ -23,6 +23,9 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'jwalton512/vim-blade'
 Plug 'lumiliet/vim-twig'
 
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 lua require("lsp")
