@@ -11,7 +11,7 @@ installCore() {
     sudo apt-get install -y brave-browser
 
     echo 'installing core directories'
-    mkdir -p ~/tmp
+    mkdir -p ~/build
 
     echo 'setting up git'
     echo 'what is your name?'
@@ -52,12 +52,12 @@ installFonts() {
 installDev() {
     echo 'installing neovim'
     sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
-    cd ~/tmp
+    cd ~/build
     git clone https://github.com/neovim/neovim
     cd neovim
     make
     sudo make install
-    rm -rf ~/tmp/neovim
+    rm -rf ~/build/neovim
     sudo apt-get install -y python3-pip
     sudo pip3 install --upgrade neovim
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -67,7 +67,7 @@ installDev() {
     sudo apt-get install -y php7.4-cli php7.4-curl php7.4-xml php7.4-mysql php7.4-mbstring php7.4-gd php7.4-zip php7.4-soap
 
     echo 'installing composer'
-    cd ~/tmp
+    cd ~/build
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
     php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
     sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
