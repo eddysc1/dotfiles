@@ -35,3 +35,7 @@ nnoremap <leader>ft :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("> ")})<CR>
 nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
+
+" Terminal
+nnoremap <leader>T :tabnew<CR>:term<CR>
+nnoremap <leader>t :term<CR>
